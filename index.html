@@ -402,6 +402,8 @@
   </main>
 
   <script>
+    const answerLetters = Array.from({ length: 26 }, (_, index) => String.fromCharCode(65 + index));
+
     const questions = [
       {
         question: "Which planet is known as the Red Planet?",
@@ -490,7 +492,7 @@
         button.className = "answer";
         button.type = "button";
         button.dataset.index = String(index);
-        button.innerHTML = `<span class="answer-letter">${String.fromCharCode(65 + index)}</span><span>${answer}</span>`;
+        button.innerHTML = `<span class="answer-letter">${answerLetters[index]}</span><span>${answer}</span>`;
         fragment.appendChild(button);
       });
 
